@@ -1,6 +1,13 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hotel Management System Initialized." << endl;
+    return 0;
+}
 
 const int MAX_ROOMS = 10;
 
