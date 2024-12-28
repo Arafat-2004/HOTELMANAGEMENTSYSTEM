@@ -54,13 +54,17 @@ void bookRoom() {
         cin.ignore(); // Clear the input buffer
         getline(cin, customerName);
 
+        if (customerName.empty()) {
+            cout << "Name cannot be empty. Please try again." << endl;
+            return;
+        }
+
         rooms[roomNumber - 1].isBooked = true;
         rooms[roomNumber - 1].customerName = customerName;
 
         cout << "Room " << roomNumber << " has been successfully booked by " << customerName << "!" << endl;
     }
 }
-
 void viewBookings() {
     cout << "\nBooked Rooms:\n";
     bool anyBooked = false;
