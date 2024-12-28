@@ -23,16 +23,18 @@ void initializeRooms() {
         rooms[i].rate = (i % 2 == 0) ? 50.0 : 100.0;            // Rates based on room type
     }
 }
-
 void displayAvailableRooms() {
     cout << "\nAvailable Rooms:\n";
+    cout << "Room Number | Room Type | Rate\n";
+    cout << "--------------------------------\n";
     for (int i = 0; i < MAX_ROOMS; i++) {
         if (!rooms[i].isBooked) {
-            cout << "Room " << rooms[i].roomNumber << " is available." << endl;
+            cout << "     " << rooms[i].roomNumber
+                 << "       |  " << rooms[i].roomType
+                 << "  | $" << rooms[i].rate << endl;
         }
     }
 }
-
 void bookRoom() {
     int roomNumber;
     string customerName;
