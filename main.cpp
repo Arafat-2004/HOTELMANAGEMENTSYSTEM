@@ -19,6 +19,8 @@ void initializeRooms() {
         rooms[i].roomNumber = i + 1;
         rooms[i].isBooked = false;
         rooms[i].customerName = "";
+        rooms[i].roomType = (i % 2 == 0) ? "Single" : "Double"; // Alternate room types
+        rooms[i].rate = (i % 2 == 0) ? 50.0 : 100.0;            // Rates based on room type
     }
 }
 
