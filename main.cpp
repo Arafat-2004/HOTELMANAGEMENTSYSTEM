@@ -65,6 +65,26 @@ void bookRoom() {
         cout << "Room " << roomNumber << " has been successfully booked by " << customerName << "!" << endl;
     }
 }
+void cancelBooking() {
+    int roomNumber;
+
+    cout << "\nEnter room number to cancel booking: ";
+    cin >> roomNumber;
+
+    if (roomNumber < 1 || roomNumber > MAX_ROOMS) {
+        cout << "Invalid room number. Please try again." << endl;
+        return;
+    }
+
+    if (!rooms[roomNumber - 1].isBooked) {
+        cout << "Room " << roomNumber << " is not booked." << endl;
+    } else {
+        rooms[roomNumber - 1].isBooked = false;
+        rooms[roomNumber - 1].customerName = "";
+
+        cout << "Booking for room " << roomNumber << " has been successfully canceled." << endl;
+    }
+}
 void viewBookings() {
     cout << "\nBooked Rooms:\n";
     bool anyBooked = false;
