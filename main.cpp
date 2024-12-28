@@ -1,13 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Hotel Management System Initialized." << endl;
-    return 0;
-}
 
 const int MAX_ROOMS = 10;
 
@@ -15,6 +8,8 @@ struct Room {
     int roomNumber;
     bool isBooked;
     string customerName;
+    string roomType; // New field for room type
+    double rate;     // New field for room rate
 };
 
 Room rooms[MAX_ROOMS];
