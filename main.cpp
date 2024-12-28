@@ -87,11 +87,16 @@ void cancelBooking() {
 }
 void viewBookings() {
     cout << "\nBooked Rooms:\n";
+    cout << "Room Number | Room Type | Rate | Customer Name\n";
+    cout << "----------------------------------------------------\n";
     bool anyBooked = false;
 
     for (int i = 0; i < MAX_ROOMS; i++) {
         if (rooms[i].isBooked) {
-            cout << "Room " << rooms[i].roomNumber << " is booked by " << rooms[i].customerName << "." << endl;
+            cout << "     " << rooms[i].roomNumber
+                 << "       |  " << rooms[i].roomType
+                 << "  | $" << rooms[i].rate
+                 << "  | " << rooms[i].customerName << endl;
             anyBooked = true;
         }
     }
@@ -110,8 +115,9 @@ int main() {
         cout << "\nHotel Management System\n";
         cout << "1. Display Available Rooms\n";
         cout << "2. Book a Room\n";
-        cout << "3. View Bookings\n";
-        cout << "4. Exit\n";
+        cout << "3. Cancel Booking\n";
+        cout << "4. View Bookings\n";
+        cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -123,15 +129,18 @@ int main() {
                 bookRoom();
                 break;
             case 3:
-                viewBookings();
+                cancelBooking();
                 break;
             case 4:
+                viewBookings();
+                break;
+            case 5:
                 cout << "Exiting the system. Thank you!" << endl;
                 break;
             default:
                 cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 4);
+    } while (choice != 5);
 
     return 0;
 }
